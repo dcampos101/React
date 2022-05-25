@@ -9,6 +9,14 @@ import Node from "../components/Node";
 import { checkNodesStatus } from "../reducers/nodes";
 
 describe("<Nodes />", () => {
+  const blocks = [
+    {
+      id: "1",
+      attributes: {
+        data: "Initial test",
+      },
+    },
+  ];
   const nodes = {
     list: [
       {
@@ -16,12 +24,14 @@ describe("<Nodes />", () => {
         online: false,
         name: "Node 1",
         loading: false,
+        blocks,
       },
       {
         url: "https://secret-lowlands-62331.herokuapp.com",
         online: false,
         name: "Node 2",
         loading: false,
+        blocks,
       },
     ],
   };

@@ -10,7 +10,9 @@ export const Nodes: React.FC = () => {
   const [expandedNodeURL, setExpandedNodeURL] = useState<null | string>(null);
   const dispatch = useDispatch();
   const nodes = useAppSelector(selectNodes);
-
+  //console.log(dispatch);
+  //console.log(nodes);
+  
   useEffect(() => {
     dispatch(checkNodesStatus(nodes));
     // eslint-disable-next-line react-hooks/exhaustive-deps

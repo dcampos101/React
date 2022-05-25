@@ -110,11 +110,24 @@ exports[`<Nodes /> should match snapshot 1`] = `
             <div
               className="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              <span
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
               >
-                Blocks go here
-              </p>
+                <div
+                  className="MuiBox-root css-83j1k9"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 css-1cplt2i-MuiTypography-root"
+                  >
+                    001
+                  </p>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 css-nabzm5-MuiTypography-root"
+                  >
+                    Initial test
+                  </p>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -214,11 +227,24 @@ exports[`<Nodes /> should match snapshot 1`] = `
             <div
               className="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              <span
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
               >
-                Blocks go here
-              </p>
+                <div
+                  className="MuiBox-root css-83j1k9"
+                >
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 css-1cplt2i-MuiTypography-root"
+                  >
+                    001
+                  </p>
+                  <p
+                    className="MuiTypography-root MuiTypography-body1 css-nabzm5-MuiTypography-root"
+                  >
+                    Initial test
+                  </p>
+                </div>
+              </span>
             </div>
           </div>
         </div>

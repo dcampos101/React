@@ -3,12 +3,20 @@ import { ThunkMiddleware } from "redux-thunk";
 import nodesReducer, { checkNodeStatus, NodesState } from "../reducers/nodes";
 
 describe("Store", () => {
+  const blocks = [
+    {
+      id: "1",
+      attributes: {
+        data: "Initial test",
+      },
+    },
+  ];
   const nodes = {
     list: [
-      { url: "a.com", online: false, name: "", loading: false },
-      { url: "b.com", online: false, name: "", loading: false },
-      { url: "c.com", online: false, name: "", loading: false },
-      { url: "d.com", online: false, name: "", loading: false },
+      { url: "a.com", online: false, name: "", loading: false, blocks },
+      { url: "b.com", online: false, name: "", loading: false, blocks },
+      { url: "c.com", online: false, name: "", loading: false, blocks },
+      { url: "d.com", online: false, name: "", loading: false, blocks },
     ],
   };
 
@@ -36,42 +44,42 @@ describe("Store", () => {
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[0] },
-        payload: { node_name: "alpha" },
+        payload: { node_name: "alpha", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[1] },
-        payload: { node_name: "beta" },
+        payload: { node_name: "beta", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[0] },
-        payload: { node_name: "gamma" },
+        payload: { node_name: "gamma", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[2] },
-        payload: { node_name: "delta" },
+        payload: { node_name: "delta", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[1] },
-        payload: { node_name: "epsilon" },
+        payload: { node_name: "epsilon", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[0] },
-        payload: { node_name: "zeta" },
+        payload: { node_name: "zeta", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[0] },
-        payload: { node_name: "eta" },
+        payload: { node_name: "eta", blocks },
       },
       {
         type: checkNodeStatus.fulfilled.type,
         meta: { arg: nodes.list[0] },
-        payload: { node_name: "theta" },
+        payload: { node_name: "theta", blocks },
       },
     ];
     actions.forEach((action) => store.dispatch(action));
@@ -79,10 +87,10 @@ describe("Store", () => {
     const actual = store.getState();
     const expected = {
       list: [
-        { url: "a.com", online: true, name: "theta", loading: false },
-        { url: "b.com", online: true, name: "epsilon", loading: false },
-        { url: "c.com", online: true, name: "delta", loading: false },
-        { url: "d.com", online: false, name: "", loading: false },
+        { url: "a.com", online: true, name: "theta", loading: false, blocks },
+        { url: "b.com", online: true, name: "epsilon", loading: false, blocks },
+        { url: "c.com", online: true, name: "delta", loading: false, blocks },
+        { url: "d.com", online: false, name: "", loading: false, blocks },
       ],
     };
 
